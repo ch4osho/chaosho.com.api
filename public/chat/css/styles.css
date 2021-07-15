@@ -1,0 +1,66 @@
+@charset "UTF-8";
+html {
+  height: 100%;
+  width: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  margin: 0 auto; }
+
+h1, h2, h3, h4, h6 {
+  margin-top: 10px; }
+
+.chaos-center-div {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center; }
+
+p {
+  color: orange;
+  padding: 5px 10px;
+  margin: 0; }
+
+.user_msg {
+  color: black; }
+
+.list-unstyled {
+  height: calc(100% - 50px);
+  width: 100%;
+  overflow: scroll;
+  background: #ededed; }
+
+.chaos-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  height: calc(100% - 100px); }
+
+hr {
+  margin-top: 0;
+  margin-bottom: 5px; }
+
+.chaos-buttom {
+  padding: 5px 10px; }
+  .chaos-buttom .chaos_form {
+    position: fixed;
+    bottom: 5px;
+    width: 100%; }
+    .chaos-buttom .chaos_form .chaos-row {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative; }
+      .chaos-buttom .chaos_form .chaos-row .chaos-input {
+        width: calc(100% - 85px); }
+      .chaos-buttom .chaos_form .chaos-row .chaos-submit-btn {
+        margin-left: 10px;
+        float: right;
+        min-width: 50px; }
