@@ -5,6 +5,10 @@ var cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const chatRoomServer = require("./utils/ws2chat.js");
 
+const isDev = process.env.NODE_ENV === 'dev'
+
+console.log('isDev:',isDev)
+
 const indexRouter = require("./routes/index");
 const reactRouter = require("./routes/react");
 
@@ -54,7 +58,6 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-// app.listen(8088);
-app.listen(80);
+app.listen(isDev ? 8088 : 80);
 
 module.exports = app;
