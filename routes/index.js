@@ -10,7 +10,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "chaos_fund" });
+  res.render("index", { title: "chaos'funds" });
 });
 
 // 获取所有基金
