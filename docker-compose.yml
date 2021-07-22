@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+  backend-api:
+    build:
+      context: .
+      dockerfile: Dockerfile-node
+    networks:
+      - app-network
+    expose:
+      - 3000
+    container_name: backend-api
+  mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: chaos_fund
+      MYSQL_ROOT_PASSWORD: "123456"
+    networks:
+      - app-network
+    volumes:
+      - /etc/data
+    ports:
+      - "3306:3306"
+  nginx:
+    image: nginx
+    volumes:
+      - ./apps:/apps
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - app-network
+    ports:
+      - "80:80"
+
+networks:
+  app-network:
+    driver: bridge

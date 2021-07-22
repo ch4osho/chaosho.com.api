@@ -1,0 +1,6 @@
+FROM node:16.5.0-alpine
+WORKDIR /app/node-api
+COPY ./node-api .
+RUN npm install
+CMD ["node","./app.js"]
+ENV LANG C.UTF-8
